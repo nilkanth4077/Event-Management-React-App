@@ -5,6 +5,7 @@ import { PublicPage } from "./Pages/PublicPage";
 import { SignupPage } from "./Components/SignupPage/SignupPage";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { LoginPage } from "./Components/LoginPage/LoginPage";
+import { Footer } from "./Components/Footer/Footer";
 
 function App() {
   return (
@@ -16,6 +17,7 @@ function App() {
           <Route path="/signup" element={<SignupPage />} />
           <Route path="/login" element={<LoginPage />} />
         </Routes>
+        <Footer/>
       </Router>
     </div>
   );

@@ -2,6 +2,6 @@ import React from 'react'
 
 export const PublicPage = () => {
   return (
-    <div>PublicPage</div>
+    <div>Public Home Page</div>
   )
 }
