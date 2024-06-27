@@ -1,7 +1,38 @@
-import React from "react";
+import React, { useState } from "react";
 import '../../App.css';
+import { useNavigate } from "react-router-dom";
+import Api from "../../API/Api";
 
 export const LoginPage = () => {
+
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
+  const [error, setError] = useState('');
+
+  const navigate = useNavigate();
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+
+    try {
+      const userData = await Api.login(email, password);
+      if(userData.token){
+        localStorage.setItem('token', userData.token)
+        localStorage.setItem('role', userData.role)
+        localStorage.setItem('email', userData.email)
+        navigate('/home')
+      }else{
+        setError(userData.error)
+      }
+    } catch (error) {
+      console.log(error);
+      setError(error)
+      setTimeout(() => {
+        setError('');
+      }, 5000);
+    }
+  }
+
   return (
     <>
       <div>
@@ -16,7 +47,7 @@ export const LoginPage = () => {
                 />
               </div>
               <div className="col-md-8 col-lg-6 col-xl-4 offset-xl-1">
-                <form>
+                <form onSubmit={handleSubmit}>
                   <div className="d-flex flex-row align-items-center justify-content-center justify-content-lg-start">
                     <p className="lead fw-normal mb-0 me-3">Sign in with</p>
                     <button
@@ -41,7 +72,7 @@ export const LoginPage = () => {
                   <div className="divider d-flex align-items-center my-4">
                     <p className="text-center fw-bold mx-3 mb-0">Or</p>
                   </div>
-
+                  {error && <p className="text-danger">{error}</p>}
                   <div data-mdb-input-init className="form-outline mb-4">
                     <label className="form-label" htmlFor="form3Example3">
                       Email address
@@ -49,8 +80,11 @@ export const LoginPage = () => {
                     <input
                       type="email"
                       id="form3Example3"
+                      value={email}
+                      onChange={(e) => setEmail(e.target.value)}
                       className="form-control form-control-lg"
                       placeholder="Enter a valid email address"
+                      required
                     />
                   </div>
 
@@ -61,8 +95,11 @@ export const LoginPage = () => {
                     <input
                       type="password"
                       id="form3Example4"
+                      value={password}
+                      onChange={(e) => setPassword(e.target.value)}
                       className="form-control form-control-lg"
                       placeholder="Enter password"
+                      required
                     />
                   </div>
 
@@ -85,7 +122,7 @@ export const LoginPage = () => {
 
                   <div className="text-center text-lg-start mt-4 pt-2">
                     <button
-                      type="button"
+                      type="submit"
                       data-mdb-button-init
                       data-mdb-ripple-init
                       className="btn btn-primary btn-lg"
