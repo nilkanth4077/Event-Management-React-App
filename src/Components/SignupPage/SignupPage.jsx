@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import Api from "../../API/Api";
+import '../SignupPage/SignupPage.css'
 
 export const SignupPage = () => {
 
@@ -42,7 +43,7 @@ export const SignupPage = () => {
 
   return (
     <>
-      <div>
+      <div className="main-signup">
         <section className="vh-100">
           <div className="container-fluid h-custom">
             <div className="row d-flex justify-content-center align-items-center h-100">

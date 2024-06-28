@@ -39,6 +39,15 @@ class Api {
         }
     }
 
+    static async getAllEvents() {
+        try {
+            const response = await axios.get(`${this.BASE_URL}/events`)
+            return response.data;
+        } catch (error) {
+            throw error;
+        }
+    }
+
     static async getProfile(token) {
         try {
             const response = await axios.get(`${this.BASE_URL}/adminuser/get-profile`,
