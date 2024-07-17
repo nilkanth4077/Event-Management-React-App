@@ -1,49 +1,46 @@
 import React from "react";
-import { Navbar, Nav, NavLink } from "react-bootstrap";
-import { Link } from "react-router-dom";
-import "./Navigation.css"; // Create and import a CSS file for custom styles
+import logo from "../../assets/img/logo.png";
 
 export const Navigation = () => {
   return (
-    <header>
-      <Navbar
-        collapseOnSelect
-        expand="sm"
-        className="navbar-custom"
-      >
-        <div className="container-fluid">
-          <NavLink as={Link} to="/"><h2 className="mx-5">EMS</h2></NavLink>
-          <Navbar.Toggle aria-controls="navbarScroll" />
-          <Navbar.Collapse id="navbarScroll">
-            <Nav className="ms-auto mx-5">
-              <NavLink
-                eventKey="1"
-                as={Link}
-                className="nav-link-custom"
-                to="/"
-              >
-                Home
-              </NavLink>
-              <NavLink
-                eventKey="2"
-                as={Link}
-                className="nav-link-custom"
-                to="/signup"
-              >
-                Signup
-              </NavLink>
-              <NavLink
-                eventKey="3"
-                as={Link}
-                className="nav-link-custom"
-                to="/login"
-              >
-                Login
-              </NavLink>
-            </Nav>
-          </Navbar.Collapse>
+    <>
+      <header class="header-section">
+        <div class="container">
+          <div class="logo">
+            <a href="/">
+              <img src={logo} alt="" />
+            </a>
+          </div>
+          <div class="nav-menu">
+            <nav class="mainmenu mobile-menu">
+              <ul>
+                <li>
+                  <a href="/">Home</a>
+                </li>
+                <li>
+                  <a href="/about">About</a>
+                </li>
+                <li>
+                  <a href="/signup">Signup</a>
+                </li>
+                <li>
+                  <a href="/login">Login</a>
+                </li>
+                <li>
+                  <a href="/blog">Blog</a>
+                </li>
+                <li>
+                  <a href="/contact">Contacts</a>
+                </li>
+              </ul>
+            </nav>
+            <a href="/" class="primary-btn top-btn">
+              <i class="fa fa-ticket"></i> Ticket
+            </a>
+          </div>
+          <div id="mobile-menu-wrap"></div>
         </div>
-      </Navbar>
-    </header>
+      </header>
+    </>
   );
 };

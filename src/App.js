@@ -7,6 +7,8 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import { LoginPage } from "./Components/LoginPage/LoginPage";
 import { Footer } from "./Components/Footer/Footer";
 import { HomePage } from "./Components/HomePage/HomePage";
+import AllEvents from "./Components/AllEvents/AllEvents";
+import AdminDashboard from "./Components/Admin/AdminDashboard";
 
 function App() {
   return (
@@ -18,6 +20,8 @@ function App() {
           <Route path="/home" element={<HomePage />} />
           <Route path="/signup" element={<SignupPage />} />
           <Route path="/login" element={<LoginPage />} />
+          <Route path="/all-events" element={<AllEvents />} />
+          <Route path="//admin-dashboard" element={<AdminDashboard />} />
         </Routes>
         <Footer/>
       </Router>
