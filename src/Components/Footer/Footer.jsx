@@ -4,13 +4,13 @@ import logo from "../../assets/img/footer-logo.png";
 export const Footer = () => {
   return (
     <>
-      <footer class="footer-section">
-        <div class="container">
-          <div class="row">
-            <div class="col-lg-12">
-              <div class="footer-text">
-                <div class="ft-logo">
-                  <a href="/" class="footer-logo">
+      <footer className="footer-section">
+        <div className="container">
+          <div className="row">
+            <div className="col-lg-12">
+              <div className="footer-text">
+                <div className="ft-logo">
+                  <a href="/" className="footer-logo">
                     <img src={logo} alt="" />
                   </a>
                 </div>
@@ -34,14 +34,14 @@ export const Footer = () => {
                     <a href="/admin-dashboard" target="_blank">Admin</a>
                   </li>
                 </ul>
-                <div class="copyright-text">
+                <div className="copyright-text">
                   <p>
                     Copyright &copy;
                     <script>
                       document.write(new Date().getFullYear());
                     </script>{" "}
                     All rights reserved | This template is made with{" "}
-                    <i class="fa fa-heart" aria-hidden="true"></i> by{" "}
+                    <i className="fa fa-heart" aria-hidden="true"></i> by{" "}
                     <a
                       href="https://colorlib.com"
                       target="_blank"
@@ -51,21 +51,21 @@ export const Footer = () => {
                     </a>
                   </p>
                 </div>
-                <div class="ft-social">
+                <div className="ft-social">
                   <a href="/">
-                    <i class="fa fa-facebook"></i>
+                    <i className="fa fa-facebook"></i>
                   </a>
                   <a href="/">
-                    <i class="fa fa-twitter"></i>
+                    <i className="fa fa-twitter"></i>
                   </a>
                   <a href="/">
-                    <i class="fa fa-linkedin"></i>
+                    <i className="fa fa-linkedin"></i>
                   </a>
                   <a href="/">
-                    <i class="fa fa-instagram"></i>
+                    <i className="fa fa-instagram"></i>
                   </a>
                   <a href="/">
-                    <i class="fa fa-youtube"></i>
+                    <i className="fa fa-youtube"></i>
                   </a>
                 </div>
               </div>

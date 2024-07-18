@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import Api from "../../API/Api";
+import ArrowRightIcon from "@mui/icons-material/ArrowRight";
 
 const AllEvents = () => {
   const [events, setEvents] = useState([]);
@@ -18,41 +19,54 @@ const AllEvents = () => {
 
   return (
     <>
-      <section class="breadcrumb-section">
-        <div class="breadcrumb-text">
+      <section className="breadcrumb-section">
+        <div className="breadcrumb-text">
           <h2>All Events</h2>
         </div>
       </section>
-      <section class="home-about-section spad">
+      <section className="home-about-section spad">
         {events.map((event) => (
-          <div class="container">
-            <div class="row mb-5">
-              <div class="col-lg-6">
-                <div class="ha-pic">
+          <div className="container">
+            <div className="row mb-5">
+              <div className="col-lg-6">
+                <div className="ha-pic">
                   <img src={event.thumbnail} alt="" />
                 </div>
               </div>
-              <div class="col-lg-6">
-                <div class="ha-text">
+              <div className="col-lg-6">
+                <div className="ha-text">
                   <h2>{event.title}</h2>
+                  <h5><i>Organized By:</i> {event.host.firstName.toUpperCase()}{" "}{event.host.lastName.toUpperCase()}</h5>
                   <p>{event.details}</p>
                   <ul>
                     <li>
-                      <span class="icon_check"></span> Type: {event.type}
+                      <span className="icon_check">
+                        <ArrowRightIcon />
+                      </span>
+                      <span className="text-dark">Type:</span> {event.type}
                     </li>
                     <li>
-                      <span class="icon_check"></span> Locations:{" "}
+                      <span className="icon_check">
+                        <ArrowRightIcon />
+                      </span>
+                      <span className="text-dark">Locations:</span>{" "}
                       {event.location}
                     </li>
                     <li>
-                      <span class="icon_check"></span> Capacity:{" "}
+                      <span className="icon_check">
+                        <ArrowRightIcon />
+                      </span>
+                      <span className="text-dark">Capacity:</span>{" "}
                       {event.capacity}
                     </li>
                     <li>
-                      <span class="icon_check"></span> Price: ₹{event.price}
+                      <span className="icon_check">
+                        <ArrowRightIcon />
+                      </span>
+                      <span className="text-dark">Price:</span> ₹{event.price}
                     </li>
                   </ul>
-                  <a href="/" class="ha-btn">
+                  <a href="/" className="ha-btn">
                     Discover Now
                   </a>
                 </div>

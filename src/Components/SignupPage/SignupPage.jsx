@@ -41,11 +41,11 @@ export const SignupPage = () => {
 
   return (
     <>
-      <section class="contact-from-section spad">
-        <div class="container">
-          <div class="row">
-            <div class="col-lg-12">
-              <div class="section-title">
+      <section className="contact-from-section spad">
+        <div className="container">
+          <div className="row">
+            <div className="col-lg-12">
+              <div className="section-title">
                 <h2>Register Yourself !</h2>
                 <p>
                   Fill out the form below to recieve a free and confidential
@@ -54,11 +54,11 @@ export const SignupPage = () => {
               </div>
             </div>
           </div>
-          <div class="row">
-            <div class="col-lg-12">
-              <form onSubmit={handleSubmit} class="comment-form contact-form">
-                <div class="row">
-                  <div class="col-lg-4">
+          <div className="row">
+            <div className="col-lg-12">
+              <form onSubmit={handleSubmit} className="comment-form contact-form">
+                <div className="row">
+                  <div className="col-lg-4">
                     <input
                       id="firstName"
                       name="firstName"
@@ -68,7 +68,7 @@ export const SignupPage = () => {
                       onChange={handleInputChange}
                     />
                   </div>
-                  <div class="col-lg-4">
+                  <div className="col-lg-4">
                     <input
                       id="lastName"
                       name="lastName"
@@ -78,7 +78,7 @@ export const SignupPage = () => {
                       onChange={handleInputChange}
                     />
                   </div>
-                  <div class="col-lg-4">
+                  <div className="col-lg-4">
                     <input
                       id="role"
                       name="role"
@@ -88,7 +88,7 @@ export const SignupPage = () => {
                       onChange={handleInputChange}
                     />
                   </div>
-                  <div class="col-lg-6">
+                  <div className="col-lg-6">
                     <input
                       id="email"
                       name="email"
@@ -98,7 +98,7 @@ export const SignupPage = () => {
                       onChange={handleInputChange}
                     />
                   </div>
-                  <div class="col-lg-6">
+                  <div className="col-lg-6">
                     <input
                       id="password"
                       name="password"
@@ -108,8 +108,8 @@ export const SignupPage = () => {
                       onChange={handleInputChange}
                     />
                   </div>
-                  <div class="col-lg-12 text-center">
-                    <button type="submit" class="site-btn">
+                  <div className="col-lg-12 text-center">
+                    <button type="submit" className="site-btn">
                       Register
                     </button>
                     <p className="small fw-bold mt-2 pt-1 mb-0">

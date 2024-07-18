@@ -317,7 +317,8 @@ ol {
 .hero-text a,
 .ha-text a,
 .footer-text ul li a,
-.copyright-text p a {
+.copyright-text p a,
+.price-item a {
   text-decoration: none;
 }
 
@@ -401,7 +402,7 @@ ol {
 }
 
 .hero-section .hero-text h2 {
-  font-size: 60px;
+  font-size: 55px;
   color: #ffffff;
   line-height: 72px;
   font-weight: 600;
@@ -496,14 +497,14 @@ ol {
 }
 
 .ha-text {
-  padding-top: 30px;
+  padding-top: 20px;
 }
 
 .ha-text h2 {
   color: #171822;
   font-size: 40px;
   font-weight: 700;
-  margin-bottom: 32px;
+  margin-bottom: 10px;
 }
 
 .ha-text p {
@@ -1228,8 +1229,7 @@ ol {
 }
 
 .breadcrumb-text {
-  text-align: left;
-  margin-left: 16.3%;
+  text-align: center;
 }
 
 .breadcrumb-text h2 {
@@ -1328,7 +1328,7 @@ ol {
 }
 
 .story-section .section-title {
-  text-align: left;
+  text-align: center;
 }
 
 .story-section .section-title h2 {

@@ -9,6 +9,7 @@ import { Footer } from "./Components/Footer/Footer";
 import { HomePage } from "./Components/HomePage/HomePage";
 import AllEvents from "./Components/AllEvents/AllEvents";
 import AdminDashboard from "./Components/Admin/AdminDashboard";
+import EventDetails from "./Components/EventDetails/EventDetails";
 
 function App() {
   return (
@@ -21,9 +22,10 @@ function App() {
           <Route path="/signup" element={<SignupPage />} />
           <Route path="/login" element={<LoginPage />} />
           <Route path="/all-events" element={<AllEvents />} />
+          <Route path="/event-details/:eventId" element={<EventDetails />} />
           <Route path="//admin-dashboard" element={<AdminDashboard />} />
         </Routes>
-        <Footer/>
+        <Footer />
       </Router>
     </div>
   );

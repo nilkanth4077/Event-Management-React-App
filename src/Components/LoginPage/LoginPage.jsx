@@ -6,6 +6,7 @@ import Api from "../../API/Api";
 export const LoginPage = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  // eslint-disable-next-line no-unused-vars
   const [error, setError] = useState("");
 
   const navigate = useNavigate();
@@ -35,11 +36,11 @@ export const LoginPage = () => {
 
   return (
     <>
-      <section class="contact-from-section spad">
-        <div class="container">
-          <div class="row">
-            <div class="col-lg-12">
-              <div class="section-title">
+      <section className="contact-from-section spad">
+        <div className="container">
+          <div className="row">
+            <div className="col-lg-12">
+              <div className="section-title">
                 <h2>Login To Your Account !</h2>
                 <p>
                   Fill out the form below to recieve a free and confidential
@@ -48,11 +49,11 @@ export const LoginPage = () => {
               </div>
             </div>
           </div>
-          <div class="row">
-            <div class="col-lg-12">
-              <form onSubmit={handleSubmit} class="comment-form contact-form">
-                <div class="row">
-                  <div class="col-lg-6">
+          <div className="row">
+            <div className="col-lg-12">
+              <form onSubmit={handleSubmit} className="comment-form contact-form">
+                <div className="row">
+                  <div className="col-lg-6">
                     <input
                       id="email"
                       name="email"
@@ -62,7 +63,7 @@ export const LoginPage = () => {
                       onChange={(e) => setEmail(e.target.value)}
                     />
                   </div>
-                  <div class="col-lg-6">
+                  <div className="col-lg-6">
                     <input
                       id="password"
                       name="password"
@@ -72,8 +73,8 @@ export const LoginPage = () => {
                       onChange={(e) => setPassword(e.target.value)}
                     />
                   </div>
-                  <div class="col-lg-12 text-center">
-                    <button type="submit" class="site-btn">
+                  <div className="col-lg-12 text-center">
+                    <button type="submit" className="site-btn">
                       Login
                     </button>
                     <p className="small fw-bold mt-2 pt-1 mb-0">

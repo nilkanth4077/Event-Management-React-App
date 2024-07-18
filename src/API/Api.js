@@ -101,6 +101,21 @@ class Api {
     }
   }
 
+  static async getEventById(eventId, token) {
+    try {
+      const response = await axios.get(
+        `${this.BASE_URL}/get-event/${eventId}`,
+        {
+          headers: { Authorization: `Bearer ${token}` },
+        }
+      );
+      console.log("Event: ", response.data);
+      return response.data;
+    } catch (error) {
+      throw error;
+    }
+  }
+
   // Check Authentication
   static logout() {
     localStorage.removeItem("token");
