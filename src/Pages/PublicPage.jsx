@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from "react";
 import Api from "../API/Api";
 import manImg from "../assets/img/hero-right.png";
-import "../Pages/PublicPage.css";
 import ChevronRightIcon from "@mui/icons-material/ChevronRight";
 import ArrowRightIcon from "@mui/icons-material/ArrowRight";
 
