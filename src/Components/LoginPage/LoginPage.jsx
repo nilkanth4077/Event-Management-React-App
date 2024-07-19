@@ -13,21 +13,22 @@ export const LoginPage = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-
+  
     try {
       const userData = await Api.login(email, password);
+      console.log("Login response:", userData); // Log the response for debugging
+  
       if (userData.token) {
         localStorage.setItem("token", userData.token);
         localStorage.setItem("role", userData.role);
         localStorage.setItem("email", userData.email);
-        console.log(userData.email, email, password, userData.token)
         navigate("/home");
       } else {
-        setError(userData.error);
+        setError("Login failed. Please check your credentials."); // Set a meaningful error message
       }
     } catch (error) {
-      console.log(error);
-      setError(error);
+      console.error("Login error:", error); // Log the error for debugging
+      setError("Login failed. Please try again."); // Set a generic error message
       setTimeout(() => {
         setError("");
       }, 5000);

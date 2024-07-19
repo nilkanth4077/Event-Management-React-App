@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import Api from "../../API/Api";
 import ArrowRightIcon from "@mui/icons-material/ArrowRight";
+import { Link } from "react-router-dom";
 
 const AllEvents = () => {
   const [events, setEvents] = useState([]);
@@ -36,7 +37,10 @@ const AllEvents = () => {
               <div className="col-lg-6">
                 <div className="ha-text">
                   <h2>{event.title}</h2>
-                  <h5><i>Organized By:</i> {event.host.firstName.toUpperCase()}{" "}{event.host.lastName.toUpperCase()}</h5>
+                  <h5>
+                    <i>Organized By:</i> {event.host.firstName.toUpperCase()}{" "}
+                    {event.host.lastName.toUpperCase()}
+                  </h5>
                   <p>{event.details}</p>
                   <ul>
                     <li>
@@ -66,9 +70,9 @@ const AllEvents = () => {
                       <span className="text-dark">Price:</span> ₹{event.price}
                     </li>
                   </ul>
-                  <a href="/" className="ha-btn">
+                  <Link to={`/event-details/${event.id}`} className="ha-btn">
                     Discover Now
-                  </a>
+                  </Link>
                 </div>
               </div>
             </div>

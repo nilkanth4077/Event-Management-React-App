@@ -1,7 +1,29 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import ArrowRightIcon from "@mui/icons-material/ArrowRight";
+import { useParams } from "react-router-dom";
+import Api from "../../API/Api";
 
 const EventDetails = () => {
+  const { eventId } = useParams();
+  const [event, setEvent] = useState(null);
+
+  useEffect(() => {
+    const fetchEvent = async () => {
+      try {
+        const eventData = await Api.getEventById(eventId);
+        setEvent(eventData);
+        console.log("Event: ", eventData);
+      } catch (error) {
+        console.error("Error fetching event:", error);
+      }
+    };
+    fetchEvent();
+  }, [eventId]);
+
+  if (!event) {
+    return <div>Loading...</div>;
+  }
+
   return (
     <>
       <section className="about-section spad">
@@ -33,41 +55,44 @@ const EventDetails = () => {
             <div className="container">
               <div className="row mb-5">
                 <div className="col-lg-6">
-                  <div className="ha-pic">
-                    <img src="thumbnail" alt="" />
+                  <div className="ha-ed-pic">
+                    <img src={event.thumbnail} alt="" />
                   </div>
                 </div>
                 <div className="col-lg-6">
                   <div className="ha-text">
-                    <h2>title</h2>
+                    <h2>{event.title}</h2>
                     <h5>
-                      <i>Organized By:</i> firstName lastName
+                      <i>Organized By:</i> {event.host.firstName}{" "}
+                      {event.host.lastName}
                     </h5>
-                    <p>details</p>
+                    <p>{event.details}</p>
                     <ul>
                       <li>
                         <span className="icon_check">
                           <ArrowRightIcon />
                         </span>
-                        <span className="text-dark">Type:</span> type
+                        <span className="text-dark">Type:</span> {event.type}
                       </li>
                       <li>
                         <span className="icon_check">
                           <ArrowRightIcon />
                         </span>
-                        <span className="text-dark">Locations:</span> location
+                        <span className="text-dark">Locations:</span>{" "}
+                        {event.location}
                       </li>
                       <li>
                         <span className="icon_check">
                           <ArrowRightIcon />
                         </span>
-                        <span className="text-dark">Capacity:</span> capacity
+                        <span className="text-dark">Capacity:</span>{" "}
+                        {event.capacity}
                       </li>
                       <li>
                         <span className="icon_check">
                           <ArrowRightIcon />
                         </span>
-                        <span className="text-dark">Price:</span> ₹price
+                        <span className="text-dark">Price:</span> ₹{event.price}
                       </li>
                     </ul>
                   </div>

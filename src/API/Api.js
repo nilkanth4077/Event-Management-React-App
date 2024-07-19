@@ -9,6 +9,7 @@ class Api {
         email,
         password,
       });
+      console.log("Response", response.data)
       return response.data;
     } catch (error) {
       throw error;
@@ -101,14 +102,9 @@ class Api {
     }
   }
 
-  static async getEventById(eventId, token) {
+  static async getEventById(eventId) {
     try {
-      const response = await axios.get(
-        `${this.BASE_URL}/get-event/${eventId}`,
-        {
-          headers: { Authorization: `Bearer ${token}` },
-        }
-      );
+      const response = await axios.get(`${this.BASE_URL}/events/${eventId}`);
       console.log("Event: ", response.data);
       return response.data;
     } catch (error) {
