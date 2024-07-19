@@ -1,9 +1,8 @@
-import React, { useState } from "react";
+import React, { ChangeEvent, FormEvent, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import Api from "../../API/Api";
-import "../SignupPage/SignupPage.css";
 
-export const SignupPage = () => {
+export const SignupPage: React.FC = () => {
   const navigate = useNavigate();
 
   const [formData, setFormData] = useState({
@@ -14,12 +13,12 @@ export const SignupPage = () => {
     role: "",
   });
 
-  const handleInputChange = (e) => {
+  const handleInputChange = (e: ChangeEvent<HTMLInputElement | HTMLSelectElement>) => {
     const { name, value } = e.target;
     setFormData({ ...formData, [name]: value });
   };
 
-  const handleSubmit = async (e) => {
+  const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     try {
       await Api.register(formData);
@@ -31,6 +30,7 @@ export const SignupPage = () => {
         password: "",
         role: "",
       });
+      console.log("Data: ", formData);
       alert("Registration Successfull");
       navigate("/login");
     } catch (error) {
@@ -79,15 +79,22 @@ export const SignupPage = () => {
                     />
                   </div>
                   <div className="col-lg-4">
-                    <input
+                    <select
                       id="role"
                       name="role"
-                      type="text"
-                      placeholder="Role"
                       value={formData.role}
                       onChange={handleInputChange}
-                    />
+                      className="form-control"
+                    >
+                      <option value="" disabled>
+                        Select Role
+                      </option>
+                      <option value="USER">User</option>
+                      <option value="ADMIN">Admin</option>
+                      <option value="ORGANIZER">Organizer</option>
+                    </select>
                   </div>
+
                   <div className="col-lg-6">
                     <input
                       id="email"
