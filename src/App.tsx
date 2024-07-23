@@ -10,6 +10,7 @@ import AdminDashboard from "./Components/Admin/AdminDashboard";
 import EventDetails from "./Components/EventDetails/EventDetails";
 import AuthPage from "./Components/AuthPage/AuthPage";
 import { Profile } from "./Components/AuthPage/Profile";
+import CreateEvent from "./Components/Organizer/CreateEvent";
 
 const App: React.FC = () => {
   return (
@@ -24,6 +25,7 @@ const App: React.FC = () => {
           <Route path="/all-events" element={<AllEvents />} />
           <Route path="/event-details/:eventId" element={<EventDetails />} />
           <Route path="//admin-dashboard" element={<AdminDashboard />} />
+          <Route path="/org-create-event" element={<CreateEvent />} />
         </Routes>
         <Footer />
       </Router>

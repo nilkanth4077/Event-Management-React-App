@@ -42,6 +42,26 @@ class Api {
     }
   }
 
+  static async getAllGuestsByEventId(eventId: Number) {
+    try {
+      const response = await axios.get(`${this.BASE_URL}/guest/by-event/${eventId}`);
+      // console.log("Event guests: ", response.data);
+      return response.data;
+    } catch (error) {
+      throw error;
+    }
+  }
+
+  static async getScheduleByEventId(eventId: Number) {
+    try {
+      const response = await axios.get(`${this.BASE_URL}/schedule/items-by-event/${eventId}`);
+      // console.log("Event schedule: ", response.data);
+      return response.data;
+    } catch (error) {
+      throw error;
+    }
+  }
+
   static async getAllEvents() {
     try {
       const response = await axios.get(`${this.BASE_URL}/events`);
@@ -107,7 +127,7 @@ class Api {
   static async getEventById(eventId: Number) {
     try {
       const response = await axios.get(`${this.BASE_URL}/events/${eventId}`);
-      console.log("Event: ", response.data);
+      // console.log("Event: ", response.data);
       return response.data;
     } catch (error) {
       throw error;

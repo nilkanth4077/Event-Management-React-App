@@ -1644,7 +1644,7 @@ ol {
 
 .schedule-table-tab .schedule-table-content table thead tr th strong {
   font-size: 24px;
-  color: #171822;
+  color: #ffffff;
   font-weight: 600;
   margin-bottom: 8px;
 }
@@ -1694,6 +1694,11 @@ ol {
 }
 
 .schedule-table-tab .schedule-table-content table tbody tr td.hover-bg:hover {
+  background: -o-linear-gradient(330deg, #ee8425, #f9488b);
+  background: linear-gradient(120deg, #ee8425, #f9488b);
+}
+
+.schedule-table-tab .schedule-table-content table thead tr.bg {
   background: -o-linear-gradient(330deg, #ee8425, #f9488b);
   background: linear-gradient(120deg, #ee8425, #f9488b);
 }
